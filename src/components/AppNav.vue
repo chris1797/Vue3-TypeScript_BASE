@@ -1,0 +1,15 @@
+<template>
+    <nav>
+        <h2>nav</h2>
+        <ul>
+            <li><a href="#">Menu 1</a></li>
+            <li><a href="#">Menu 2</a></li>
+            <li><a href="#">Menu 3</a></li>
+            <li><a href="#">Menu 4</a></li>
+        </ul>
+    </nav>
+</template>
+<script>
+export default {};
+</script>
+<style></style>
