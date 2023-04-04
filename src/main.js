@@ -10,5 +10,4 @@ app.component("AppNav", AppNav);
 app.component("AppHeader", AppHeader);
 app.component("AppView", AppView);
 app.component("BookComponent", BookComponent);
-
 app.mount("#app");
