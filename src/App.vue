@@ -1,11 +1,13 @@
 <template>
-    <app-header></app-header>
-    <app-nav></app-nav>
-    <app-view></app-view>
+	<div></div>
 </template>
+
 <script>
-export default {};
+export default {
+	setup() {
+		return {};
+	},
+};
 </script>
-<style>
-@import "./assets/base.css";
-</style>
+
+<style lang="scss" scoped></style>
