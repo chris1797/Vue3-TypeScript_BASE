@@ -1,5 +1,11 @@
 <template>
-	<div class="text" :class="[activeClass, errorClass]">This is text.</div>
+	<div
+		class="text"
+		:class="[activeClass, errorClass]"
+		:style="{ color: activeColor, fontSize: fontSize + 'px' }"
+	>
+		This is text.
+	</div>
 	<button v-on:click="toggle">toggle</button>
 	<button v-on:click="hasError = !hasError">toggleError</button>
 </template>
@@ -27,6 +33,8 @@ export default {
 
 		const activeClass = ref('active');
 		const errorClass = ref('error');
+		const activeColor = ref('red');
+		const fontSize = ref(30);
 
 		const toggle = () => {
 			isActive.value = !isActive.value;
@@ -39,6 +47,8 @@ export default {
 			classObject,
 			activeClass,
 			errorClass,
+			activeColor,
+			fontSize,
 		};
 	},
 };
