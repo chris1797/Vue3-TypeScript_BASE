@@ -17,6 +17,7 @@ export default {
 		// 	'text-danger': true,
 		// });
 
+		// computed 사용
 		const classObject = computed(() => {
 			return {
 				active: true && true,
