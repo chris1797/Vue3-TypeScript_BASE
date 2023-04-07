@@ -1,63 +1,75 @@
 <template>
   <div>
-    <div id="modifiers">
-      <div @click="clickDiv">
-        DIV 영역
-        <p @click="clickP">
-          p 영역
-          <span @click.stop="clickSpan"> SPAN 영역 </span>
-          <a href="https://naver.com" @click.prevent.stop="clickA">a 영역</a>
-        </p>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </nav>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 export default {
   setup() {
-    const clickDiv = () => {
-      console.log('clickDiv');
-      location.href = 'https://naver.com';
-    };
-
-    const clickP = () => {
-      console.log('clickP');
-    };
-
-    const clickSpan = () => {
-      console.log('clickSpan');
-      // e.stopPropagation();
-      alert('좋아요');
-    };
-
-    const clickA = (e: any) => {
-      // e.preventDefault();
-      alert('어쩔건데~');
-    };
-
-    return { clickDiv, clickP, clickSpan, clickA };
+    return {};
   },
 };
 </script>
 
-<style lang="scss" scoped>
-#modifiers div,
-#modifiers p,
-#modifiers span {
-  padding: 40px;
-}
-
-#modifiers div {
-  background-color: #ccc;
-}
-
-#modifiers p {
-  background-color: #999;
-}
-
-#modifiers span {
-  background-color: #666;
-  display: block;
-}
-</style>
+<style lang="scss" scoped></style>

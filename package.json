@@ -6,23 +6,27 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "format": "prettier --write src/",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "fix": "eslint --fix --ext .js, .vue src"
   },
   "dependencies": {
     "@vue/eslint-config-typescript": "^11.0.2",
+    "bootstrap": "^5.2.3",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "vue": "^3.2.47"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
+    "@types/node": "^18.15.11",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/eslint-config-prettier": "^7.1.0",
     "eslint": "^8.34.0",
     "eslint-plugin-vue": "^9.9.0",
     "prettier": "^2.8.4",
     "sass": "^1.60.0",
+    "unplugin-auto-import": "^0.15.2",
     "vite": "^4.1.4",
     "webpack-env": "^0.8.0"
   }
