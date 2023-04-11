@@ -16,6 +16,25 @@
           ></AppCard>
         </div>
       </div>
+
+      <hr clas="my-4" />
+      <!--
+        modelValue
+        update:modelValue
+      -->
+      <input
+        type="text"
+        :model-value="username"
+        @update:model-value="(value: string) => (username = value)"
+      />
+      <LabelInput v-model="username" label="이름"></LabelInput>
+      <LabelTitle v-model:title="username" label="제목"></LabelTitle>
+
+      <!-- 전달 인자를 활용한 두개의 v-model 적용 -->
+      <Username
+        v-model:firstname="firstname"
+        v-model:lastname="lastname"
+      ></Username>
     </div>
   </main>
 </template>
@@ -23,11 +42,19 @@
 <script lang="ts">
 import AppCard from '@/components/AppCard.vue';
 import PostCreate from '@/components/PostCreate.vue';
-import { reactive } from 'vue';
+import LabelInput from '@/components/LabelInput.vue';
+import LabelTitle from '@/components/LabelTitle.vue';
+import Username from '@/components/Username.vue';
+
+import { reactive, ref } from 'vue';
+
 export default {
   components: {
     AppCard,
     PostCreate,
+    LabelInput,
+    LabelTitle,
+    Username,
   },
   setup() {
     const obj = reactive({
@@ -60,7 +87,11 @@ export default {
       posts.push(newPost);
     };
 
-    return { obj, posts, createPost };
+    const username = ref('');
+    const firstname = ref('');
+    const lastname = ref('');
+
+    return { obj, posts, createPost, username, firstname, lastname };
   },
 };
 </script>
