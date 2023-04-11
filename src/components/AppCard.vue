@@ -33,7 +33,7 @@ export default {
     },
     contents: {
       type: String,
-      required: true,
+      // required: true,
     },
     isLike: {
       type: Boolean,
@@ -49,7 +49,8 @@ export default {
   emits: ['toggleLike'],
   setup(props, context) {
     // setup의 매개변수로 props를 받을 수 있음
-    console.log('props.title: ', props.title);
+    // console.log('props.title: ', props.title);
+
     const isLikeClasss = computed(() =>
       props.isLike ? 'btn-danger' : 'btn-outline-danger',
     );

@@ -1,8 +1,12 @@
 <template>
   <main>
     <div class="container py-4">
+      <PostCreate @createPost="createPost"></PostCreate>
+
+      <hr clas="my-4" />
+
       <div class="row g-5">
-        <div v-for="post in posts" :key="post.key" class="col col-4">
+        <div v-for="post in posts" :key="post.id" class="col col-4">
           <AppCard
             :title="post.title"
             :contents="post.contents"
@@ -16,12 +20,14 @@
   </main>
 </template>
 
-<script>
+<script lang="ts">
 import AppCard from '@/components/AppCard.vue';
+import PostCreate from '@/components/PostCreate.vue';
 import { reactive } from 'vue';
 export default {
   components: {
     AppCard,
+    PostCreate,
   },
   setup() {
     const obj = reactive({
@@ -30,13 +36,31 @@ export default {
     });
 
     const posts = reactive([
-      { title: '제목1', contents: '내용1', isLike: true, type: 'news' },
-      { title: '제목2', contents: '내용2', isLike: true, type: 'news' },
-      { title: '제목3', contents: '내용3', isLike: true, type: 'news' },
-      { title: '제목4', contents: '내용4', isLike: false, type: 'notice' },
-      { title: '제목5', contents: '내용5', isLike: false, type: 'notice' },
+      { id: 1, title: '제목1', contents: '내용1', isLike: true, type: 'news' },
+      { id: 2, title: '제목2', contents: '내용2', isLike: true, type: 'news' },
+      { id: 3, title: '제목3', contents: '내용3', isLike: true, type: 'news' },
+      {
+        id: 4,
+        title: '제목4',
+        contents: '내용4',
+        isLike: false,
+        type: 'notice',
+      },
+      {
+        id: 5,
+        title: '제목5',
+        contents: '내용5',
+        isLike: false,
+        type: 'notice',
+      },
     ]);
-    return { obj, posts };
+
+    const createPost = (newPost: any) => {
+      console.log('newPost: ', newPost);
+      posts.push(newPost);
+    };
+
+    return { obj, posts, createPost };
   },
 };
 </script>
