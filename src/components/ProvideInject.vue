@@ -10,7 +10,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Child from './Child.vue';
 import { ref, provide, inject } from 'vue';
 
@@ -19,9 +19,9 @@ export default {
     Child,
   },
   setup() {
-    const staticMessage = 'static message';
-    const message = ref('message');
-    const count = ref(10);
+    const staticMessage: string = 'static message';
+    const message: string = ref('message');
+    const count: number = ref(10);
 
     /*
     현재 이 ProvideInject가 provide 역할
@@ -35,7 +35,7 @@ export default {
     걍 main.ts에서 provide로 보내고 inject로 받으면 됨
     */
     console.log('this: ', this); // undefined
-    const msg = inject('msg');
+    const msg: string = inject('msg');
     console.log('msg: ', msg); // hello msg
     return { count };
   },

@@ -10,17 +10,17 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { inject } from 'vue';
 export default {
   setup() {
     /*
     ProvideInject 컴포넌트에서 provide()로 보낸 값 inject()로 받기
     */
-    const staticMessage = inject('static-message', 'default message');
-    const message = inject('message');
-    const count = inject('count');
-    const appMessage = inject('app-message');
+    const staticMessage: string = inject('static-message', 'default message');
+    const message: string = inject('message');
+    const count: string = inject('count');
+    const appMessage: string = inject('app-message');
     return { staticMessage, message, count, appMessage };
   },
 };
