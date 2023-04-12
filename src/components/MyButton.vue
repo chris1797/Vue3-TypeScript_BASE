@@ -11,7 +11,7 @@
 <script>
 export default {
   // inheritAttrs: false,
-  // emits: { saysay: null },
+  emits: { click: null },
   setup(props, { emit }) {
     // console.log('context.attrs: ', context.attrs);
     // console.log('context.class: ', context.attrs.class);
@@ -20,7 +20,7 @@ export default {
     // context.attrs.onClick();
 
     const sayHello2 = () => {
-      emit('saysay'); // 부모로 보낼 이벤트 이름
+      emit('click'); // 부모로 보낼 이벤트 이름
     };
     return { sayHello2 };
   },
