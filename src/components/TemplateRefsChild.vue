@@ -7,19 +7,17 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { Ref, ref } from 'vue';
 
-export default {
-  setup() {
-    const message: Ref<string | number> = ref('Hello~!');
-    const sayHello = () => {
-      alert(message.value);
-    };
-
-    return { message, sayHello };
-  },
+const message: Ref<string | number> = ref('Hello~!');
+const sayHello = () => {
+  alert(message.value);
 };
+
+defineExpose({
+  sayHello,
+});
 </script>
 
 <style lang="scss" scoped></style>
