@@ -15,6 +15,7 @@ module.exports = {
   ],
   env: {
     node: true,
+    // <script setup>에서 defineProps, defineEmits, defineExpose를 사용할 수 있게 하는 옵션
     'vue/setup-compiler-macros': true,
   },
   rules: {
