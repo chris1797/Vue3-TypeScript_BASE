@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">{{ route.name }}</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -16,10 +16,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <router-link to="/" class="nav-link active" aria-current="page">
+              Home
+            </router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <router-link to="/about/123" class="nav-link">About</router-link>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -60,12 +62,11 @@
   </nav>
 </template>
 
-<script lang="ts">
-export default {
-  setup() {
-    return {};
-  },
-};
+<script setup lang="ts">
+import { ref, Ref, onMounted } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+
+const route = useRoute();
 </script>
 
 <style lang="scss" scoped></style>

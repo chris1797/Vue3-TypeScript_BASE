@@ -20,7 +20,7 @@ module.exports = {
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    // 'no-unused-vars': 'off', 사용하지 않는 변수 경고 끄기
+    'no-unused-vars': 'off', // 사용하지 않는 변수 경고 끄기
     'prettier/prettier': [
       'error',
       {
