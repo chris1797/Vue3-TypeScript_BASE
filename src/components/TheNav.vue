@@ -21,7 +21,18 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/about/123" class="nav-link">About</router-link>
+            <router-link
+              :to="{
+                name: 'About',
+                params: {
+                  userId: '321',
+                  name: 'chris',
+                },
+              }"
+              class="nav-link"
+            >
+              About
+            </router-link>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -67,6 +78,7 @@ import { ref, Ref, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
+const router = useRouter();
 </script>
 
 <style lang="scss" scoped></style>

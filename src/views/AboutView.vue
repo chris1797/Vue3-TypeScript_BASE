@@ -1,18 +1,17 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-    <p>param: {{ userId }}</p>
+    <p>userId: {{ $route.params.userId }}</p>
+    <p>name: {{ route.params.name }}</p>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import { useRoute } from 'vue-router';
 
 const route = useRoute();
 const userId = computed((): any => {
   return route.params.userId;
 });
-
-console.log(userId);
 </script>

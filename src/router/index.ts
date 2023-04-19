@@ -7,7 +7,7 @@ const routes: Array<RouteRecordRaw> = [
     component: import('../views/HomeView.vue'),
   },
   {
-    path: '/about/:userId',
+    path: '/about',
     name: 'About',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
