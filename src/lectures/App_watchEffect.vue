@@ -9,27 +9,21 @@
   </div>
 </template>
 
-<script>
-import { ref, watchEffect } from 'vue';
+<script setup lang="ts">
+import { ref, Ref, watchEffect } from 'vue';
 
-export default {
-  setup() {
-    const title = ref('');
-    const contents = ref('');
+const title: Ref<string> = ref('');
+const contents: Ref<string> = ref('');
 
-    const save = (title, contents) => {
-      console.log(`save completed title: ${title}, contents: ${contents}`);
-    };
-
-    // watchEffect는 최초에 한번 즉시 실행
-    watchEffect(() => {
-      console.log('watchEffect');
-      save(title.value, contents.value);
-    });
-
-    return { title, contents, save };
-  },
+const save = (title: string, contents: string) => {
+  console.log(`save completed title: ${title}, contents: ${contents}`);
 };
+
+// watchEffect는 최초에 한번 즉시 실행
+watchEffect(() => {
+  console.log('watchEffect');
+  save(title.value, contents.value);
+});
 </script>
 
 <style lang="scss" scoped></style>

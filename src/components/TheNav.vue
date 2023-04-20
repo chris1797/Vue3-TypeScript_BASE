@@ -22,6 +22,15 @@
           </li>
           <li class="nav-item">
             <router-link
+              to="/foldExample"
+              class="nav-link active"
+              aria-current="page"
+            >
+              FoldExample
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link
               :to="{
                 name: 'About',
                 params: {
