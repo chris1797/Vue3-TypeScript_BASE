@@ -9,17 +9,9 @@
         <li class="faq-title">{{ faq.title }}</li>
         <button
           class="navbar-toggler"
-          v-if="!faq.isVisible"
           @click.prevent="toggleContent(faq.faq_idx)"
         >
-          ▼
-        </button>
-        <button
-          class="navbar-toggler"
-          v-else
-          @click.prevent="toggleContent(faq.faq_idx)"
-        >
-          ▲
+          {{ faq.isVisible ? '▲' : '▼' }}
         </button>
         <div class="faq-content" v-show="faq.isVisible">
           {{ faq.content }}
